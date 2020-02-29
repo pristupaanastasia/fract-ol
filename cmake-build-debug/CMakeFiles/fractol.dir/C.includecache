@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mriley/Desktop/fractol/fractal.c
+fractol.h
+/Users/mriley/Desktop/fractol/fractol.h
+
+/Users/mriley/Desktop/fractol/fractol.h
+minilibx_macos/mlx.h
+/Users/mriley/Desktop/fractol/minilibx_macos/mlx.h
+math.h
+-
+ft_printf_git/ft_printf.h
+/Users/mriley/Desktop/fractol/ft_printf_git/ft_printf.h
+fcntl.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/Users/mriley/Desktop/fractol/ft_printf_git/ft_printf.h
+stdarg.h
+-
+libft/libft.h
+/Users/mriley/Desktop/fractol/ft_printf_git/libft/libft.h
+
+/Users/mriley/Desktop/fractol/ft_printf_git/libft/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+libc.h
+-
+
+/Users/mriley/Desktop/fractol/minilibx_macos/mlx.h
+

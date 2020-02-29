@@ -1,0 +1,117 @@
+cmake_minimum_required(VERSION 3.15)
+project(fractol C)
+
+set(CMAKE_C_STANDARD 11)
+
+include_directories(.)
+include_directories(ft_printf_git)
+include_directories(ft_printf_git/libft)
+include_directories(ft_printf_git/libft/includes)
+
+add_executable(fractol
+        ft_printf_git/libft/includes/libft.h
+        ft_printf_git/libft/ft_atoi.c
+        ft_printf_git/libft/ft_bzero.c
+        ft_printf_git/libft/ft_freesplit.c
+        ft_printf_git/libft/ft_isalnum.c
+        ft_printf_git/libft/ft_isalpha.c
+        ft_printf_git/libft/ft_isascii.c
+        ft_printf_git/libft/ft_isdigit.c
+        ft_printf_git/libft/ft_isprint.c
+        ft_printf_git/libft/ft_itoa.c
+        ft_printf_git/libft/ft_itoa_base.c
+        ft_printf_git/libft/ft_itoa_base_size_t.c
+        ft_printf_git/libft/ft_itoa_base_uintmax_t.c
+        ft_printf_git/libft/ft_itoa_base_ull.c
+        ft_printf_git/libft/ft_itoa_intmax_t.c
+        ft_printf_git/libft/ft_itoa_ll.c
+        ft_printf_git/libft/ft_itoa_ssize_t.c
+        ft_printf_git/libft/ft_lstadd.c
+        ft_printf_git/libft/ft_lstdel.c
+        ft_printf_git/libft/ft_lstdelone.c
+        ft_printf_git/libft/ft_lstiter.c
+        ft_printf_git/libft/ft_lstmap.c
+        ft_printf_git/libft/ft_lstnew.c
+        ft_printf_git/libft/ft_memalloc.c
+        ft_printf_git/libft/ft_memccpy.c
+        ft_printf_git/libft/ft_memchr.c
+        ft_printf_git/libft/ft_memcmp.c
+        ft_printf_git/libft/ft_memcpy.c
+        ft_printf_git/libft/ft_memdel.c
+        ft_printf_git/libft/ft_memmove.c
+        ft_printf_git/libft/ft_memset.c
+        ft_printf_git/libft/ft_number_of_digits.c
+        ft_printf_git/libft/ft_number_of_word.c
+        ft_printf_git/libft/ft_putchar.c
+        ft_printf_git/libft/ft_putchar_fd.c
+        ft_printf_git/libft/ft_putendl.c
+        ft_printf_git/libft/ft_putendl_fd.c
+        ft_printf_git/libft/ft_putnbr.c
+        ft_printf_git/libft/ft_putnbr_endl.c
+        ft_printf_git/libft/ft_putnbr_fd.c
+        ft_printf_git/libft/ft_putstr.c
+        ft_printf_git/libft/ft_putstr_fd.c
+        ft_printf_git/libft/ft_realloc.c
+        ft_printf_git/libft/ft_strcat.c
+        ft_printf_git/libft/ft_strchr.c
+        ft_printf_git/libft/ft_strclr.c
+        ft_printf_git/libft/ft_strcmp.c
+        ft_printf_git/libft/ft_strcpy.c
+        ft_printf_git/libft/ft_strdel.c
+        ft_printf_git/libft/ft_strdup.c
+        ft_printf_git/libft/ft_strequ.c
+        ft_printf_git/libft/ft_striter.c
+        ft_printf_git/libft/ft_striteri.c
+        ft_printf_git/libft/ft_strjoin.c
+        ft_printf_git/libft/ft_strlcat.c
+        ft_printf_git/libft/ft_strlen.c
+        ft_printf_git/libft/ft_strmap.c
+        ft_printf_git/libft/ft_strmapi.c
+        ft_printf_git/libft/ft_strncat.c
+        ft_printf_git/libft/ft_strncmp.c
+        ft_printf_git/libft/ft_strncpy.c
+        ft_printf_git/libft/ft_strnequ.c
+        ft_printf_git/libft/ft_strnew.c
+        ft_printf_git/libft/ft_strnstr.c
+        ft_printf_git/libft/ft_strrchr.c
+        ft_printf_git/libft/ft_strset.c
+        ft_printf_git/libft/ft_strsizeupdata.c
+        ft_printf_git/libft/ft_strsplit.c
+        ft_printf_git/libft/ft_strstr.c
+        ft_printf_git/libft/ft_strsub.c
+        ft_printf_git/libft/ft_strtrim.c
+        ft_printf_git/libft/ft_tolower.c
+        ft_printf_git/libft/ft_toupper.c
+        ft_printf_git/libft/get_next_line.c
+        ft_printf_git/libft/get_next_line.h
+        ft_printf_git/libft/libft.h
+        ft_printf_git/bonus_part.c
+        ft_printf_git/doublf.c
+        ft_printf_git/doublf_part_2.c
+        ft_printf_git/doublf_part_3.c
+        ft_printf_git/doublf_part_4.c
+        ft_printf_git/doublf_part_5.c
+        ft_printf_git/f_cps.c
+        ft_printf_git/ft_diouxx_up.c
+        ft_printf_git/ft_fourth.c
+        ft_printf_git/ft_printf.c
+        ft_printf_git/ft_printf.h
+        ft_printf_git/ft_rainbow.c
+        ft_printf_git/ft_rainbow.h
+        ft_printf_git/ft_second.c
+        ft_printf_git/ft_third.c
+        ft_printf_git/ldoublf.c
+        ft_printf_git/ldoublf_part_2.c
+        ft_printf_git/ldoublf_part_3.c
+        ft_printf_git/ldoublf_part_4.c
+        ft_printf_git/ldoublf_part_5.c
+        ft_printf_git/ldoublf_part_6.c
+        ft_printf_git/ldoublf_part_7.c
+        fractal.c
+        fractol.h)
+target_link_libraries(fractol
+        "-framework AppKit"
+        "-framework OpenCL"
+        "-framework OpenGL"
+        mlx
+        )
