@@ -7,6 +7,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
+#include <pthread.h>
 # define WIN_WIDTH 768
 # define WIN_HEIGHT 768
 # define COORD_X (WIN_WIDTH / 2)
@@ -51,14 +52,16 @@ typedef struct		s_mlx_point
 	int				x;
 	int				y;
 	t_mnim			k;
+	int				x_zoom;
+	int				y_zoom;
 	int				*colors;
 	int				size;
 	int				num;
 	t_mlx			mlx;
 	double				zoom;
 }					t_mlx_point;
-void julia(int x, int y,t_mlx_point *new);
-void	draw_fractal(t_mlx_point *new);
+void julia(int x, int y,t_mlx_point **new);
+void	draw_fractal(t_mlx_point **new);
 
 
 #endif
