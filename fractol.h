@@ -10,13 +10,12 @@
 #include <pthread.h>
 # define WIN_WIDTH 768
 # define WIN_HEIGHT 768
-# define COORD_X (WIN_WIDTH / 2)
-# define COORD_Y (WIN_HEIGHT / 5)
 # define COEF_PLUS 2
 # define COEF_MINUS 2
 # define COEF_MOVE 20
 # define UP_DOWN 10
 # define DELTA 1
+# define COLOR_SILVER		0xCCCCCC
 typedef struct		s_mnim
 {
 	double re;
@@ -54,6 +53,8 @@ typedef struct		s_mlx_point
 	t_mnim			k;
 	int				x_zoom;
 	int				y_zoom;
+	int				start;
+	int				end;
 	int				*colors;
 	int				size;
 	int				num;

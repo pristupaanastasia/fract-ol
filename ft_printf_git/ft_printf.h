@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include "libft/libft.h"
-
+# include "ft_rainbow.h"
 typedef struct		s_format
 {
 	char			sym;

@@ -27,11 +27,11 @@ all: $(NAME)
 $(NAME):
 	@make -C $(LIB)
 	@gcc $(FLAGS) -c $(SRC)
-	@gcc $(FLAGS) -o $(NAME) $(OBJ) -L$(LIB) -lftprintf -L$(LIB_MLX) -lmlx -framework OpenGL -framework AppKit -g
+	@gcc $(FLAGS) -o $(NAME) $(OBJ) -L$(LIB) -lftprintf -lpthread -L$(LIB_MLX) -lmlx -framework OpenGL -framework AppKit -g
 
 test:
 	@gcc -c $(SRC) -g
-	@gcc -o $(NAME) $(OBJ) -L$(LIB) -lftprintf -L$(LIB_MLX) -lmlx -framework OpenGL -framework AppKit -g
+	@gcc -o $(NAME) $(OBJ) -L$(LIB) -lftprintf -lpthread -L$(LIB_MLX) -lmlx -framework OpenGL -framework AppKit -g
 
 clean:
 	@make -C $(LIB) clean
