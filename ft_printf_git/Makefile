@@ -29,7 +29,7 @@ OBJ_LIB = $(SRC_LIB:%.c=%.o)
 all : $(NAME)
 
 $(NAME) :
-	@gcc $(FLAGS) -c $(SRC) $(SRCS_LIB) -I$(HDR)
+	@gcc $(FLAGS) -c $(SRC) $(SRCS_LIB) -I$(HDR) -g
 	@ar rc $(NAME) $(OBJ) $(OBJ_LIB)
 	@ranlib $(NAME)
 
