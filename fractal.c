@@ -14,31 +14,28 @@
 
 void		draw_fractal_part(t_mlx_point *new)
 {
-	int			*mas;
-	t_mnim		*mnim;
-
-	mas = malloc(4 * sizeof(int));
-	mnim = malloc(6 * sizeof(t_mnim));
-	init_draw(&mnim, &mas, new);
-	while (mas[2] < new->end)
+	init_draw(new);
+	while (++new->y_k < new->end)
 	{
-		mnim[3].im = ((mnim[1].im - mas[2] * mnim[2].im) * new->zoom);
-		mas[3] = 0;
-		while (mas[3] < WIN_WIDTH)
+		new->c.im = ((new->max.im - new->y_k * new->factor.im) * new->zoom +
+		new->y_zoom + new->offset_y);
+		new->x_k = 0;
+		while (new->x_k < WIN_WIDTH)
 		{
-			mnim[3].re = ((mnim[0].re + mas[3] * mnim[2].re) * new->zoom);
-			mnim[4] = init_complex(mnim[3].re, mnim[3].im);
-			mas[1] = 0;
-			while (pow(mnim[4].re, 2.0) +
-			pow(mnim[4].im, 2.0) <= 4 && mas[1] < mas[0])
-				mnim[4] = init_z(new, mnim[4], mnim[3], mas);
-			new->mlx.img.data[mas[2] * (WIN_HEIGHT) +
-			mas[3]] = color_fractol(mas[1], mas[0]);
-			mas[3]++;
+			new->c.re = ((new->min.re + new->x_k * new->factor.re) * new->zoom +
+			new->x_zoom + new->offset_x);
+			new->z = init_complex(new->c.re, new->c.im);
+			new->it = 0;
+			while (pow(new->z.re, 2.0) +
+			pow(new->z.im, 2.0) <= 4 && new->it < new->max_it)
+			{
+				new->z = init_z(new, new->z, new->c);
+				new->it++;
+			}
+			new->mlx.img.data[new->y_k * (WIN_HEIGHT) +
+			new->x_k++] = color_fractol(new->it, new->max_it);
 		}
-		mas[2]++;
 	}
-	free_mass(mnim, mas);
 }
 
 void		draw_fractal(t_mlx_point **new1)
@@ -85,8 +82,10 @@ t_mlx_point	*init_new(void)
 		exit(0);
 	new->num = 0;
 	new->zoom = 1.0;
-	new->x_zoom = WIN_HEIGHT / 2;
-	new->y_zoom = WIN_WIDTH / 2;
+	new->x_zoom = (WIN_HEIGHT / 4) * (new->zoom * 0.0001);
+	new->y_zoom = (WIN_WIDTH / 4) * (new->zoom * 0.0001);
+	new->offset_x = 0.0;
+	new->offset_y = 0.0;
 	new->mlx.mlx_ptr = mlx_init();
 	new->mlx.win = mlx_new_window(new->mlx.mlx_ptr,
 	WIN_WIDTH, WIN_HEIGHT, "mxl 42");
@@ -120,7 +119,6 @@ int			main(int arc, char **arv)
 	if (new->num == 0)
 		put_help(arc, arv, new);
 	mlx_hook(new->mlx.win, 2, 0, key_press, new);
-	mlx_hook(new->mlx.win, 4, 0, mouse_press, new);
 	mlx_hook(new->mlx.win, 6, 0, mouse_move, new);
 	mlx_loop(new->mlx.mlx_ptr);
 	return (0);

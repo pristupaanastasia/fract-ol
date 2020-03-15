@@ -44,9 +44,8 @@ double		interpolate(double start, double end, double interpolation)
 	return (start + ((end - start) * interpolation));
 }
 
-t_mnim		init_z(t_mlx_point *new, t_mnim z, t_mnim c, int *it)
+t_mnim		init_z(t_mlx_point *new, t_mnim z, t_mnim c)
 {
-	it[1]++;
 	if (new->num == 2)
 	{
 		z = init_complex(pow(z.re, 2.0) - pow(z.im, 2.0) + new->k.re,

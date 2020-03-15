@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fractol
+NAME = fract-ol
 
-SRC = *.c
+SRC = fractal.c help.c color.c mouse.c
 
 FLAGS	= -Wall -Wextra -Werror
 
